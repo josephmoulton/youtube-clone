@@ -4,6 +4,7 @@ import Sidebar from "./Components/Sidebar";
 import Recommended from "./Components/Recommended";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import ReactDOM from "react-dom/client";
+import SearchPage from "./Pages/SearchPage";
 
 export default function App() {
   return (
@@ -22,7 +23,17 @@ export default function App() {
               </>
             }
           ></Route>
-          <Route path="/search:searchTerm" element={<></>}></Route>
+          <Route
+            path="/search/:searchTerm"
+            element={
+              <>
+                <div className="app__page">
+                  <Sidebar />
+                  <SearchPage />
+                </div>
+              </>
+            }
+          ></Route>
         </Routes>
       </Router>
     </div>
