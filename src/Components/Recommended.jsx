@@ -127,8 +127,6 @@ function Recommended() {
           channel="Grow"
           image="https://d1csarkz8obe9u.cloudfront.net/posterpreviews/youtube-thumbnail-design-template-f41731052ef38859a77214e2be972d69_screen.jpg?ts=1630950507"
         />
-        
-        
       </div>
     </div>
   );

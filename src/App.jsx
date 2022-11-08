@@ -2,18 +2,32 @@ import "./App.css";
 import Header from "./Components/Header";
 import Sidebar from "./Components/Sidebar";
 import Recommended from "./Components/Recommended";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import ReactDOM from "react-dom/client";
 
-function App() {
+export default function App() {
   return (
     <div className="app">
-      <Header />
-      <div className="app__page">
-        <Sidebar />
-        <Recommended />
-      </div>
-      {/* Recommended */}
+      <Router>
+        <Header />
+        <Routes>
+          <Route
+            path="/"
+            element={
+              <>
+                <div className="app__page">
+                  <Sidebar />
+                  <Recommended />
+                </div>
+              </>
+            }
+          ></Route>
+          <Route path="/search:searchTerm" element={<></>}></Route>
+        </Routes>
+      </Router>
     </div>
   );
 }
 
-export default App;
+const root = ReactDOM.createRoot(document.getElementById("root"));
+root.render(<App />);
